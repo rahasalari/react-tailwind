@@ -11,7 +11,6 @@ const Footer = () => {
     }
 
     return(
-        <>
             <div class='mt-20 flex justify-around '>
                 <div>
                     <div class='flex w-10 h-5 '>
@@ -52,7 +51,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </>
     )
 }
 export default Footer;

@@ -2,27 +2,6 @@ import im from '../assets/im.png'
 import add from '../assets/add.png'
 
 
-//styles
-const styles = {
-    fontSize : {
-        fontSize: 9,
-    },
-}
-
-const smallFont = {
-    fontSize : {
-        fontSize : 7,
-    },
-}
-
-const font = {
-    fontSize : {
-        fontSize : 11,
-    }
-}
-
-
-
 const AddTasks = () => {
     return (
         <>
@@ -34,8 +13,8 @@ const AddTasks = () => {
                     <div class='flex'>
                         <div class="rounded-full h-24 w-24 bg-violet-700 absolute -left-3 -top-10"></div>
                         <div class="box-content h-5 w-32 p-4 bg-white shadow-sm pt-3 absolute -right-5 -top-3">
-                            <p class='text-xs' style={styles.fontSize}>FACEBOOK ENGAGEMENT</p>
-                            <p class='text-xs' style={styles.fontSize}>1230<span class='text-gray-400 ms-3'>INTERACTION</span></p>
+                            <p class='text-xsm'>FACEBOOK ENGAGEMENT</p>
+                            <p class='text-xsm'>1230<span class='text-gray-400 ms-3'>INTERACTION</span></p>
                         </div>
                     </div>
 
@@ -45,14 +24,14 @@ const AddTasks = () => {
                                 <img src={im} alt="icon" class="h-6 w-6"/>
                             </div>
                             <div class='ms-5'>
-                                <p class='text-xs' style={styles.fontSize}>Drag & Drop</p>
-                                <p class='text-xs' style={smallFont.fontSize}>or <span class='text-green-300' style={smallFont.fontSize}>brows for a file</span></p>
+                                <p class='text-xsm'>Drag & Drop</p>
+                                <p class='text-xsm'>or <span class='text-green-300 text-xxsm'>brows for a file</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="box-content h-4 w-44 p-4 bg-white shadow-sm ms-auto mt-10 flex absolute -right-10 ">
                         <img src={add} alt="add icon" class="h-4 w-4"/>
-                        <p class='ms-1' style={font.fontSize}>Add more <span class='font-medium' style={font.fontSize}>Tasks</span></p>
+                        <p class='ms-1 text-lg' >Add more <span class='font-medium text-lg'>Tasks</span></p>
                     </div>
                 </div>
             </div>

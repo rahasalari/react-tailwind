@@ -1,6 +1,5 @@
 const Boxes = () => {
     return(
-        <>
         <div class=''>
 
             <div class='mt-16'>
@@ -55,9 +54,7 @@ const Boxes = () => {
                 Start now
                 </button>
             </div>
-
         </div>
-        </>
     )
 }
 export default Boxes;
