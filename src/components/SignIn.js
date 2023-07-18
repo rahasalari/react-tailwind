@@ -28,25 +28,28 @@ function SignIn () {
 
     return(
         <div class='mt-20 ms-20'>
-            <p class='mt-5'>Contact</p>
-            <form onSubmit={submitHandler}>
-                <div>
-                    <label>name</label>
-                    <input type="text" name='name' value={contact.name} onChange={changeHandler} class="border pt-3 px-12  mx-auto placeholder-gray-400 placeholder:text-sm"/>
-                    {errors.name && <span>{errors.name}</span>}
+            <p class=''>Contact Us</p>
+            <form onSubmit={submitHandler} class=''>
+                <div class='mt-5'>
+                    <label class='text-sm'>name</label>
+                    <input type="text" name='name' value={contact.name} onChange={changeHandler} class="border pt-3 px-12  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"/>
+                    <br></br>
+                    {errors.name && <span class='text-red-500 text-lg ms-14'>{errors.name}</span>}
                 </div>
-                <div>
-                    <label>email</label>
-                    <input type="text" name='email' value={contact.email} onChange={changeHandler} class="border pt-3 px-12  mx-auto placeholder-gray-400 placeholder:text-sm"/>
-                    {errors.email && <span>{errors.email}</span>}
+                <div class='mt-6'>
+                    <label class='text-sm'>email</label>
+                    <input type="text" name='email' value={contact.email} onChange={changeHandler} class="border pt-3 px-12  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"/>
+                    <br></br>
+                    {errors.email && <span class='text-red-500 text-lg ms-14'>{errors.email}</span>}
                 </div>
-                <div>
-                    <label>phone number</label>
-                    <input type="text" name='phoneNumber' value={contact.phoneNumber} onChange={changeHandler} class="border pt-3 px-12  mx-auto placeholder-gray-400 placeholder:text-sm"/>
-                    {errors.phoneNumber && <span>{errors.phoneNumber}</span>}
+                <div class='mt-6'>
+                    <label class='text-sm'>phone</label>
+                    <input type="text" name='phoneNumber' value={contact.phoneNumber} onChange={changeHandler} class="border pt-3 px-12  mx-auto placeholder-gray-400 placeholder:text-sm ms-3"/>
+                    <br></br>
+                    {errors.phoneNumber && <span class='text-red-500 text-lg ms-14'>{errors.phoneNumber}</span>}
                 </div>
                 <div class="">
-                    <button /*onClick={validationForm}*/ type="submit" class="bg-transparent text-violet-700  py-2 px-6 border border-violet-700 text-xs mt-4">
+                    <button /*onClick={validationForm}*/ type="submit" class="bg-transparent text-black-700  py-2 px-6 border  text-xs mt-4 ms-32">
                         Contact US
                     </button>
                 </div>
