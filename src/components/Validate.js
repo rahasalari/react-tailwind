@@ -7,7 +7,7 @@ export const Validate = contact => {
         errors.name = 'username should just have alphabet'
     } else {
         delete errors.name;
-    } //for mikhad ya na ?
+    }; //for mikhad ya na ?
 
     if (!(contact.email)) {
         errors.email = 'email required';
@@ -15,7 +15,7 @@ export const Validate = contact => {
         errors.email = 'email is invalid';
     } else {
         delete errors.email;
-    }
+    };
 
 
     if (!(contact.phoneNumber)){
@@ -24,10 +24,9 @@ export const Validate = contact => {
         errors.phoneNumber = 'the phone number is should be just numbers';
     } else if(!(contact.phoneNumber.length === 11)) {
         errors.phoneNumber = 'the phone number is not 11 numbers';
-    } else if (isNaN(contact.phoneNumber)){
-        // errors.phoneNumber = 'just numbers'
     } else {
         delete errors.phoneNumber
-    }
+    };
+
     return errors;
 };

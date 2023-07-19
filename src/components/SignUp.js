@@ -8,11 +8,13 @@ import { setPhone } from '../features/phone/phoneSlice';
 import { setEmail } from '../features/email/emailSlice';
 
 const SignUp = () => {
+    
     //selectors
     const name = useSelector((store) => store.user.nameValue);
     const email = useSelector((store) => store.email.emailValue);
     const phone = useSelector((store) => store.phone.phoneValue);
-    const contact = {name, email, phone}
+    const contact = {name, email, phone};
+
     //dispatch
     const dispatch = useDispatch();
     const nameChangeHandler = (e) => {
@@ -24,17 +26,25 @@ const SignUp = () => {
     const phoneChangeHandler = (e) => {
         dispatch(setPhone(e.target.value))
     };
+
+    //save data
+    const submitHandler = (e) => {
+        e.preventDefault();
+        console.log(contact);
+        // setErrors(validationForm(contact));
+    };
+
     //validation
     const [ errors, setErrors ] = useState({});
-    useEffect(() => {
-        setErrors(Validate(contact))
-        console.log(errors)
-    }, [contact]);
+    // useEffect(() => {
+    //     setErrors(Validate(contact))
+    //     console.log(errors)
+    // }, [contact]);
 
     return(
         <div class=' ms-20'>
             <p class=''>Sign Up</p>
-            <form class=''>
+            <form onSubmit={submitHandler} class=''>
                 <div class='mt-5'>
                     <label class='text-sm'>name</label>
                     <input type="text" name='name' value={name} onChange={nameChangeHandler} class="border pt-2 px-10  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"/>

@@ -3,27 +3,33 @@ import { Validate } from "./Validate";
 
 function SignIn () {
     
+    
     //states
     const [ contact, setContact ] = useState({
         name : '',
         email : '',
-        phoneNumber : '',
+        phoneNumber : 0,
     });
-
-    const [ errors, setErrors ] = useState({});
-
-    useEffect(() => {
-        setErrors(Validate(contact))
-        console.log(errors)
-    }, [contact]);
 
     const changeHandler = (e) => {
         setContact({...contact, [e.target.name] : e.target.value })
     };
+
+    //validation
+    const [ errors, setErrors ] = useState({});
+
+    useEffect(() => {
+        setErrors(Validate(contact))
+    }, [contact]);
+
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log(contact);
-        // setErrors(validationForm(contact));
+        if (errors.name) {
+        } else if (errors.email) {
+        } else if (errors.phoneNumber) {
+        } else {
+            console.log(contact);
+        }
     };
 
     return(
