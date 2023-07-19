@@ -1,8 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import useReducer from "../features/nameSlice";
+
+//slices
+import userReducer from "../features/name/nameSlice";
+import phoneReducer from '../features/phone/phoneSlice';
+import emailReducer from '../features/email/emailSlice';
 
 const store = configureStore({
-    reducer : {user : useReducer},
+    reducer : {
+        user : userReducer,
+        email : emailReducer,
+        phone : phoneReducer
+    },
 });
 
 export default store;
