@@ -9,6 +9,8 @@ import { setEmail } from '../features/email/emailSlice';
 const SignUp = () => {
 
     const name = useSelector((store) => store.user.nameValue);
+    const email = useSelector((store) => store.email.emailValue);
+    const phone = useSelector((store) => store.phone.phoneValue);
     //dispatch
     const dispatch = useDispatch();
     const changeHandler = (e) => {
