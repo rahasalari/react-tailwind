@@ -19,17 +19,16 @@ function SignIn () {
 
     const changeHandler = (e) => {
         setContact({...contact, [e.target.name] : e.target.value })
-    }
-
+    };
     const submitHandler = (e) => {
         e.preventDefault();
         console.log(contact);
         // setErrors(validationForm(contact));
-    }
+    };
 
     return(
-        <div class='mt-20 ms-20'>
-            <p class=''>Contact Us</p>
+        <div class=''>
+            <p class=''>Sign In</p>
             <form onSubmit={submitHandler} class=''>
                 <div class='mt-5'>
                     <label class='text-sm'>name</label>
@@ -57,5 +56,5 @@ function SignIn () {
             </form>
         </div>
     )
-}
+};
 export default SignIn;

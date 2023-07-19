@@ -1,16 +1,18 @@
-//redux
-import { useState } from "react";
-// import { Validate } from "./Validate";
+//redux toolkit
+import { useState, useEffect } from "react";
+import { Validate } from "./Validate";
+//import redux
 import { useSelector, useDispatch } from "react-redux";
 import { setName } from '../features/name/nameSlice';
 import { setPhone } from '../features/phone/phoneSlice';
 import { setEmail } from '../features/email/emailSlice';
 
 const SignUp = () => {
-
+    //selectors
     const name = useSelector((store) => store.user.nameValue);
     const email = useSelector((store) => store.email.emailValue);
     const phone = useSelector((store) => store.phone.phoneValue);
+    const contact = {name, email, phone}
     //dispatch
     const dispatch = useDispatch();
     const nameChangeHandler = (e) => {
@@ -24,10 +26,14 @@ const SignUp = () => {
     };
     //validation
     const [ errors, setErrors ] = useState({});
+    useEffect(() => {
+        setErrors(Validate(contact))
+        console.log(errors)
+    }, [contact]);
 
     return(
-        <div class='mt-20 ms-20'>
-            <p class=''>Contact Us</p>
+        <div class=' ms-20'>
+            <p class=''>Sign Up</p>
             <form class=''>
                 <div class='mt-5'>
                     <label class='text-sm'>name</label>

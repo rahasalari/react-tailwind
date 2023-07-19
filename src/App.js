@@ -19,7 +19,7 @@ function App() {
         <AddTasks/>
         <Find/>
         <LearnMore/>
-        <div class='flex'>
+        <div class='bg-gray-100 flex pb-10 pt-10 justify-center'>
           <SignIn/>
           <SignUp/>
         </div>
