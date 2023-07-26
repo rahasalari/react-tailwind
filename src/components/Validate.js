@@ -1,15 +1,15 @@
 export const Validate = contact => {
     const errors = {};
 
-    if (!(contact.name.trim())) {
+    if ((contact.name.length === 0)) {
         errors.name = 'username required';
     } else if (!/^[A-Za-z]+$/.test(contact.name)){
         errors.name = 'username should just have alphabet'
     } else {
         delete errors.name;
-    }; //for mikhad ya na ?
+    };
 
-    if (!(contact.email)) {
+    if (!(contact.email)) {  
         errors.email = 'email required';
     } else if (!/\S+@\S+\.\S+/.test(contact.email)) {
         errors.email = 'email is invalid';
