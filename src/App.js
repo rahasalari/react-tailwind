@@ -5,12 +5,14 @@ import Boxes from "./components/Boxes";
 import AddTasks from "./components/AddTask";
 import Find from "./components/Find";
 import LearnMore from "./components/LearnMore";
+import Navbar from "./components/layout/Navbar";
 
 //router
 
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/solution" element={<Boxes />} />

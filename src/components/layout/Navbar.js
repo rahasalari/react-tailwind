@@ -9,18 +9,18 @@ function Navbar() {
         </Link>
       </li>
       <li className="ms-10 md:flex-none md:mr-2">
-        <Link className="text-center text-xs px-4" href="#*">
+        <Link className="text-center text-xs px-4" to="solution">
           Solution
         </Link>
-        <a className="text-center text-xs px-4" href="#*">
+        <Link className="text-center text-xs px-4" to="features">
           Features
-        </a>
-        <a className="text-center text-xs px-4" href="#*">
+        </Link>
+        <Link className="text-center text-xs px-4" to="pricing">
           Pricing
-        </a>
-        <a className="text-center text-xs px-4" href="#*">
+        </Link>
+        <Link className="text-center text-xs px-4" to="support">
           Support
-        </a>
+        </Link>
       </li>
       <li className="text-right flex-1 me-10">
         <a className="text-xs px-4" href="#*">

@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/layout/Navbar";
 import Email from "../components/Email";
 import Logos from "../components/Logos";
 import Boxes from "../components/Boxes";
@@ -14,7 +13,6 @@ import HookForm from "../components/HookForm";
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Email />
       <Logos />
       <Boxes />
