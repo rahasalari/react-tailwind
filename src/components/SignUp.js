@@ -23,13 +23,13 @@ const SignUp = () => {
   //dispatch
   const dispatch = useDispatch();
   const nameChangeHandler = (e) => {
-    dispatch(setName(e.target.value));
+    dispatch(setName(e.target.value.replace(/[^a-z]/gi, "")));
   };
   const emailChangeHandler = (e) => {
     dispatch(setEmail(e.target.value));
   };
   const phoneChangeHandler = (e) => {
-    dispatch(setPhone(e.target.value));
+    dispatch(setPhone(e.target.value.replace(/[^0-9]+$/gi, "")));
   };
 
   //validation and submit
@@ -42,8 +42,12 @@ const SignUp = () => {
       setNameError("username required");
     } else if (!/^[A-Za-z]+$/.test(name)) {
       setNameError("just alphabets");
+    } else if (name.length < 3) {
+      setNameError("too short");
+    } else if (name.length > 20) {
+      setNameError("too long");
     } else {
-      setNameError("");
+      setNameError(false);
     }
 
     // email validation
@@ -52,7 +56,7 @@ const SignUp = () => {
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       setEmailError("email format is invalid");
     } else {
-      setEmailError("");
+      setEmailError(false);
     }
 
     // phone number validation
@@ -60,6 +64,10 @@ const SignUp = () => {
       setPhoneError("phone required");
     } else if (!/^[0-9]+$/.test(phone)) {
       setPhoneError("just numbers");
+    } else if (phone.length < 10) {
+      setPhoneError("too short");
+    } else if (phone.length > 12) {
+      setPhoneError("too long");
     } else {
       setPhoneError(false);
     }
@@ -75,9 +83,9 @@ const SignUp = () => {
 
   return (
     <div className="ms-20">
-      <p className="text-center ms-6">Sign Up</p>
-      <form onSubmit={submitHandler} class="">
-        <div class="mt-5">
+      <p className="text-center ms-10">Redux form</p>
+      <form onSubmit={submitHandler}>
+        <div className="mt-5">
           <label className="text-sm">name</label>
           <input
             type="text"
@@ -86,8 +94,8 @@ const SignUp = () => {
             onChange={nameChangeHandler}
             className={`${
               nameError
-                ? "border-red-500 border-2 h-9 w-60  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"
-                : "border h-8 w-60  mx-auto placeholder-gray-400 ms-4"
+                ? "border-red border-2 h-9 w-60  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"
+                : "border h-8 w-60 mx-auto placeholder-gray-400 ms-4"
             }`}
           />
           <br></br>
@@ -101,8 +109,8 @@ const SignUp = () => {
             onChange={emailChangeHandler}
             className={`${
               emailError
-                ? "border-red-500 border-2 h-9 w-60  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"
-                : "border h-8 w-60  mx-auto placeholder-gray-400 ms-4"
+                ? "border-red border-2 h-9 w-60  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"
+                : "border h-8 w-60 mx-auto placeholder-gray-400 ms-4"
             }`}
           />
           <br></br>
@@ -116,7 +124,7 @@ const SignUp = () => {
             onChange={phoneChangeHandler}
             className={`${
               phoneError
-                ? "border-red-500 border-2 h-9 w-60 mx-auto placeholder-gray-400 placeholder:text-sm ms-3"
+                ? "border-red border-2 h-9 w-60 mx-auto placeholder-gray-400 placeholder:text-sm ms-3"
                 : "border h-8 w-60 mx-auto placeholder-gray-400 ms-3"
             }`}
           />
@@ -125,7 +133,7 @@ const SignUp = () => {
         <div>
           <button
             type="submit"
-            className="bg-transparent text-black-700 py-2 px-6 border text-xs mt-4 ms-32"
+            className="bg-transparent text-black-700 py-2 px-6 border text-xs mt-4 ms-28"
           >
             Contact US
           </button>
@@ -136,8 +144,11 @@ const SignUp = () => {
                   (err) =>
                     err.length > 0 && (
                       <li
-                        style={{ listStyle: "square" }}
-                        className="text-sm mt-3 bg-red-500 w-64 ms-12 pb-1 pt-1"
+                        style={{
+                          listStyle: "square",
+                          listStylePosition: "inside",
+                        }}
+                        className="text-sm mt-3 bg-red w-60 pb-1 pt-1 text-left ps-5 ms-14"
                       >
                         {err}
                       </li>
@@ -152,29 +163,3 @@ const SignUp = () => {
   );
 };
 export default SignUp;
-
-// {
-//    <div
-// className={`${
-//   errors.map((err) => err.length > 0) &&
-//   "border-red-500 border-2 text-center h-24 w-64 mt-4 ms-12"
-// }`}
-// >
-// {errors && (
-//   <ol>
-//     {errors.map(
-//       (err) =>
-//         err.length > 0 && (
-//           <li style={{ listStyle: "square" }} className="text-sm mt-2">
-//             {err}
-//           </li>
-//         )
-//     )}
-//   </ol>
-// )}
-// </div>
-// }
-
-// {errors.map((err) => err.length > 0) && (
-//   <div className="border-red-500 border-2 text-center h-24 w-64 mt-4 ms-12"></div>
-// )}

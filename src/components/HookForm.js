@@ -11,15 +11,19 @@ function HookForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="mt-10 text-center">
-        <p className="text-center ms-9">react Hook Form</p>
+      <form onSubmit={handleSubmit(onSubmit)} className="text-center ms-12">
+        <p className="text-center ms-9">React Hook Form</p>
         <div className="mt-5">
           <label htmlFor="name" className="text-sm">
             name
           </label>
           <input
             id="name"
-            className="border h-8 w-60  mx-auto placeholder-gray-400 ms-4"
+            className={`${
+              errors.name
+                ? "border-red border-2 h-9 w-60  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"
+                : "border h-8 w-60 mx-auto placeholder-gray-400 ms-4"
+            }`}
             {...register("name", {
               required: true,
               maxLength: 30,
@@ -28,23 +32,29 @@ function HookForm() {
           />
           <br></br>
           {errors.name && errors.name.type === "required" && (
-            <span className="text-red-500 text-xs">This is required</span>
+            <span className="text-red-500 text-lg me-28">This is required</span>
           )}
           {errors.name && errors.name.type === "maxLength" && (
-            <span className="text-red-500 text-xs">Max length exceeded</span>
+            <span className="text-red-500 text-lg me-28">
+              Max length exceeded
+            </span>
           )}
           {errors.name && errors.name.type === "minLength" && (
-            <span className="text-red-500 text-xs">Min length</span>
+            <span className="text-red-500 text-lg me-28">Min length</span>
           )}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-6">
           <label htmlFor="email" className="text-sm">
             email
           </label>
           <input
             id="email"
-            className="border h-8 w-60  mx-auto placeholder-gray-400 ms-4"
+            className={`${
+              errors.email
+                ? "border-red border-2 h-9 w-60  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"
+                : "border h-8 w-60 mx-auto placeholder-gray-400 ms-4"
+            }`}
             {...register("email", {
               required: true,
               pattern: /\S+@\S+\.\S+/,
@@ -52,20 +62,26 @@ function HookForm() {
           />
           <br></br>
           {errors.email && errors.email.type === "required" && (
-            <span className="text-red-500 text-xs">This is required</span>
+            <span className="text-red-500 text-lg me-28">This is required</span>
           )}
           {errors.email && errors.email.type === "pattern" && (
-            <span className="text-red-500 text-xs">email format is wrong</span>
+            <span className="text-red-500 text-lg me-28">
+              email format is wrong
+            </span>
           )}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-6">
           <label htmlFor="phone" className="text-sm">
             phone
           </label>
           <input
             id="phone"
-            className="border h-8 w-60  mx-auto placeholder-gray-400 ms-4"
+            className={`${
+              errors.phone
+                ? "border-red border-2 h-9 w-60  mx-auto placeholder-gray-400 placeholder:text-sm ms-4"
+                : "border h-8 w-60 mx-auto placeholder-gray-400 ms-4"
+            }`}
             {...register("phone", {
               required: true,
               maxLength: 30,
@@ -74,19 +90,21 @@ function HookForm() {
           />
           <br></br>
           {errors.phone && errors.phone.type === "required" && (
-            <span className="text-red-500 text-xs">This is required</span>
+            <span className="text-red-500 text-lg me-28">This is required</span>
           )}
           {errors.phone && errors.phone.type === "pattern" && (
-            <span className="text-red-500 text-xs">Number format is wrong</span>
+            <span className="text-red-500 text-lg me-28">
+              Number format is wrong
+            </span>
           )}
         </div>
 
         <input
           type="submit"
-          className="bg-transparent text-black-700 py-2 px-6 border text-xs mt-4 ms-11"
+          className="bg-transparent text-black-700 py-2 px-6 border text-xs mt-4 ms-12"
         />
       </form>
-      <hr class="border-1 border-gray-100 mt-10" />
+      <hr className="border-1 border-gray mt-10" />
     </>
   );
 }
