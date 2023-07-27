@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <ul className="bg-gray flex pt-5">
       <li className="flex-1 mr-2 hidden md:block">
-        <a className="text-left text-xs px-10" href="#*">
+        <Link className="text-left text-xs px-10" to="/">
           MailMaker
-        </a>
+        </Link>
       </li>
       <li className="ms-10 md:flex-none md:mr-2">
-        <a className="text-center text-xs px-4" href="#*">
+        <Link className="text-center text-xs px-4" href="#*">
           Solution
-        </a>
+        </Link>
         <a className="text-center text-xs px-4" href="#*">
           Features
         </a>
