@@ -1,7 +1,7 @@
 const LearnMore = () => {
   return (
     <>
-      <div className="bg-purple mt-20 pb-10  flex flex-wrap sm:flex-nowrap sm:justify-center">
+      <div className="bg-purple pb-10  flex flex-wrap sm:flex-nowrap sm:justify-center">
         <div className="text-white text-base mx-auto sm:me-20 mt-16 text-center sm:text-left">
           <p>With our free resources you will become</p>
           <p>an expert in direct marketing. Learn how</p>

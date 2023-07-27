@@ -3,7 +3,7 @@ import find from "../assets/find.png";
 const Find = () => {
   return (
     <>
-      <div className="mt-20">
+      <div className="mt-20 pt-10 pb-20 bg-gray">
         <div className="text-2xl text-center">
           <p>All you need to A</p>
           <p>single platform</p>

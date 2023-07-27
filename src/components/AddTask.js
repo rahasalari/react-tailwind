@@ -6,7 +6,7 @@ const AddTasks = () => {
     <>
       <div className="lg:flex lg:mt-20 lg:justify-around">
         <div className="mt-20 lg:ms-20">
-          <div className="box-content relative h-60 w-96 p-4 ms-auto me-auto bg-gray-100 lg:ms-24">
+          <div className="box-content relative h-60 w-96 p-4 ms-auto me-auto bg-gray lg:ms-24">
             <div className="flex">
               <div className="rounded-full h-24 w-24 bg-purple absolute -left-3 -top-10"></div>
               <div className="box-content h-5 w-32 p-4 bg-white shadow-sm pt-3 absolute -right-5 -top-3">

@@ -11,7 +11,7 @@ const Boxes = () => {
       </div>
 
       <div className="mt-14 sm:flex sm:flex-wrap  sm:justify-center sm:gap-12">
-        <div className="box-content h-56 w-40 p-6 border-none bg-gray-100 mx-auto sm:mx-0">
+        <div className="box-content h-56 w-40 p-6 border-none bg-gray mx-auto sm:mx-0">
           <div className="rounded-full h-10 w-10 bg-purple text-white text-center mt-5 ms-auto me-auto text-sm pt-2">
             01
           </div>
@@ -21,7 +21,7 @@ const Boxes = () => {
             marketing can be.
           </p>
         </div>
-        <div className="mt-10 mx-auto box-content h-56 w-40 p-6 border-none bg-gray-100 sm:mt-0 sm:mx-0">
+        <div className="mt-10 mx-auto box-content h-56 w-40 p-6 border-none bg-gray sm:mt-0 sm:mx-0">
           <div className="rounded-full h-10 w-10 bg-purple text-white text-center mt-5 ms-auto me-auto text-sm pt-2">
             02
           </div>
@@ -31,7 +31,7 @@ const Boxes = () => {
             marketing can be.
           </p>
         </div>
-        <div className="mt-10 mx-auto box-content h-56 w-40 p-6 border-none bg-gray-100 sm:mt-0 sm:mx-0">
+        <div className="mt-10 mx-auto box-content h-56 w-40 p-6 border-none bg-gray sm:mt-0 sm:mx-0">
           <div className="rounded-full h-10 w-10 bg-purple text-white text-center mt-5 ms-auto me-auto text-sm pt-2">
             03
           </div>
@@ -48,6 +48,7 @@ const Boxes = () => {
           Start now
         </button>
       </div>
+      <hr className="border-1 border-gray-100 mt-14" />
     </div>
   );
 };
