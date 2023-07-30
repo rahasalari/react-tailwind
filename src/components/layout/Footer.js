@@ -54,7 +54,7 @@ const Footer = () => {
             onChange={searchHandler}
             className="border pt-3 px-4 placeholder-gray-300 mx-auto"
           />
-          <button className="bg-purple text-white  py-2 px-5 border border-purple text-xs"></button>
+          <button className="bg-purple text-white  py-2 px-5 border border-purple text-xs ms-2"></button>
         </div>
       </div>
     </div>
